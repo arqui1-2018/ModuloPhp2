@@ -16,7 +16,6 @@ function router($httpMethods, $route, $callback, $exit = true)
     }
     $matches = null;
     $regex = '/' . str_replace('/', '\/', $route) . '/';
-    echo $regex;
     if (!preg_match_all($regex, $path, $matches)) {
         return;
     }
