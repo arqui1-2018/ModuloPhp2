@@ -4,7 +4,7 @@ require_once __DIR__ . '/public/functions.php';
 
 // Default index page
 router('GET', '^/$', function() {
-    echo '<a href="users">List users</a><br>';
+    echo 'Holla Mundo';
 });
 
 // GET request to /users
