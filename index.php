@@ -2,11 +2,10 @@
 
 require_once __DIR__ . '/public/functions.php';
 // connect to mongodb
+$m = new MongoClient("https://arqui1db-2018.documents.azure.com:443/");
 	
-echo "Connection to database successfully";
-// select a database
+echo "Connection to database successfully \n";
 
-// Default index page
 router('GET', '^/$', function() {
     echo 'Holla Mundo';
 });
