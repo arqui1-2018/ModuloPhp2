@@ -1,9 +1,9 @@
 <?php
 
-require_once __DIR__ . '/public/functions.php';	
+require_once __DIR__ . '/public/functions.php';
 
 router('GET', '^/$', function() {
-    $m = new MongoClient('mongodb://phpdb:1nNMDxrQKUl6TSVbe5U6EihSmDyXRtHg2vLpcAlsR8d5hDW9x0wv5fPJoGPewosUe8JFErvEyPbP5tFjHjxkgQ==@phpdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb');
+    $client = new MongoDB\Client("mongodb://phpdb:1nNMDxrQKUl6TSVbe5U6EihSmDyXRtHg2vLpcAlsR8d5hDW9x0wv5fPJoGPewosUe8JFErvEyPbP5tFjHjxkgQ==@phpdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
     echo 'Holla Mundo';
 });
 
