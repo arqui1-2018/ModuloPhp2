@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/public/functions.php';
 
+$m = new MongoClient();
 // connect to mongodb
 	
 echo "Connection to database successfully";
