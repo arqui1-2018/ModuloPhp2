@@ -3,7 +3,6 @@
 require_once __DIR__ . '/public/functions.php';
 
 // connect to mongodb
-$m = new MongoClient();
 	
 echo "Connection to database successfully";
 // select a database
