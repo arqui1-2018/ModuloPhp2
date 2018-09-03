@@ -2,6 +2,15 @@
 
 require_once __DIR__ . '/public/functions.php';
 
+// connect to mongodb
+$m = new MongoClient( "mongodb://arqui1db-2018:jY4INnddURHmEEJDL05qGHEYGZVQgGvf4EmomytTCqhf3wsxhuxbUPN9CJAzkJWyKvt9MLrfx1TOdxOwhNT1Xw==@arqui1db-2018.documents.azure.com:10255/?ssl=true&replicaSet=globaldb" );
+	
+echo "Connection to database successfully";
+// select a database
+$db = $m->globaldb;
+ 
+echo "Database mydb selected";
+
 // Default index page
 router('GET', '^/$', function() {
     echo 'Holla Mundo';
