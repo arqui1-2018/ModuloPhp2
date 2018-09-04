@@ -7,9 +7,8 @@ router('GET', '^/$', function() {
     $query = new MongoDB\Driver\Query(array('id'=>'201513744'));
     $cursor = $manager->executeQuery('globaldb.posts', $query);
     foreach ($cursor as $document) {
-        echo $document['Name'];
+        echo $document->Name;
     }
-    echo "sucess";
 });
 
 // GET request to /users
