@@ -5,6 +5,7 @@ require_once __DIR__ . '/public/functions.php';
 router('GET', '^/$', function() {
     $client = new MongoDB\Driver\Manager("mongodb://arqui1db-2018:jY4INnddURHmEEJDL05qGHEYGZVQgGvf4EmomytTCqhf3wsxhuxbUPN9CJAzkJWyKvt9MLrfx1TOdxOwhNT1Xw==@arqui1db-2018.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
     $query = new MongoDB\Driver\Query(array('id' => '201513744'));
+    $cursor = $client->executeQuery('globaldb.posts', $query);
     echo 'Holla Mundo';
 });
 
