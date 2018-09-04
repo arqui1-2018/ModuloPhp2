@@ -4,12 +4,7 @@ require_once __DIR__ . '/public/functions.php';
 
 router('GET', '^/$', function() {
     $manager = new MongoDB\Driver\Manager("mongodb://arqui1db-2018:jY4INnddURHmEEJDL05qGHEYGZVQgGvf4EmomytTCqhf3wsxhuxbUPN9CJAzkJWyKvt9MLrfx1TOdxOwhNT1Xw==@arqui1db-2018.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
-    $filter = ['id' => ['$gt' => '201513744']];
-    $options = [
-        'projection' => ['_id' => 0],
-        'sort' => ['x' => -1],
-    ];
-    $query = new MongoDB\Driver\Query($filter, $options);
+    $query = new MongoDB\Driver\Query(array('id'=>'201513744'));
     $cursor = $manager->executeQuery('globaldb.posts', $query);
     foreach ($cursor as $document) {
         echo $document['Name'];
