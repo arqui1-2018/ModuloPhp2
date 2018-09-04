@@ -3,7 +3,12 @@
 require_once __DIR__ . '/public/functions.php';
 
 router('GET', '^/$', function() {
-    $client = new MongoDB\Driver\Manager("mongodb://phpdb:1nNMDxrQKUl6TSVbe5U6EihSmDyXRtHg2vLpcAlsR8d5hDW9x0wv5fPJoGPewosUe8JFErvEyPbP5tFjHjxkgQ==@phpdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
+    $client = new MongoDB\Driver\Manager("mongodb://arqui1db-2018:jY4INnddURHmEEJDL05qGHEYGZVQgGvf4EmomytTCqhf3wsxhuxbUPN9CJAzkJWyKvt9MLrfx1TOdxOwhNT1Xw==@arqui1db-2018.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
+    $query = new MongoDB\Driver\Query(array('id' => '201513744'));
+    $cursor = $client->executeQuery('globaldb.posts', $query);
+    foreach($cursor as $r){
+        echo $r->Name;
+     }
     echo 'Holla Mundo';
 });
 
