@@ -10,7 +10,7 @@ router('GET', '^/$', function() {
         'sort' => ['x' => -1],
     ];
     $query = new MongoDB\Driver\Query($filter, $options);
-    $cursor = $manager->executeQuery('db.collection', $query);
+    $cursor = $manager->executeQuery('globaldb.posts', $query);
     foreach ($cursor as $document) {
         echo $document['Name'];
     }
