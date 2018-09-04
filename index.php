@@ -14,6 +14,7 @@ router('GET', '^/$', function() {
     foreach ($cursor as $document) {
         echo $document['Name'];
     }
+    echo "sucess";
 });
 
 // GET request to /users
