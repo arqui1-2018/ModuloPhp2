@@ -11,7 +11,9 @@ router('GET', '^/$', function() {
     ];
     $query = new MongoDB\Driver\Query($filter, $options);
     $cursor = $manager->executeQuery('db.collection', $query);
-    echo 'Holla Mundo';
+    foreach ($cursor as $document) {
+        echo $document['Name'];
+    }
 });
 
 // GET request to /users
