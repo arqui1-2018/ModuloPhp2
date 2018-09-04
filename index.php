@@ -1,10 +1,14 @@
 <?php
 
 require_once __DIR__ . '/public/functions.php';
-
-router('GET', '^/$', function() {
-    $manager = new MongoDB\Driver\Manager("mongodb://phpdb:1nNMDxrQKUl6TSVbe5U6EihSmDyXRtHg2vLpcAlsR8d5hDW9x0wv5fPJoGPewosUe8JFErvEyPbP5tFjHjxkgQ==@phpdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb");
-    echo 'Holla Mundo';
+global $manager; 
+router('GET', '^/$', function() {   
+    $manager = new MongoDB\Driver\Manager("mongodb://arqui1db-2018:jY4INnddURHmEEJDL05qGHEYGZVQgGvf4EmomytTCqhf3wsxhuxbUPN9CJAzkJWyKvt9MLrfx1TOdxOwhNT1Xw==@arqui1db-2018.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"); 
+    $query = new MongoDB\Driver\Query(array('id' => '201513744'));
+    $rows = $manager->executeQuery('globaldb.posts', $query); // $mongo contains the connection object to MongoDB
+    foreach($rows as $r){
+        echo $r->Name;
+     }
 });
 
 // GET request to /users
