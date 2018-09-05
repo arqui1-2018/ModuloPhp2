@@ -7,7 +7,7 @@ router('GET', '^/$', function() {
     $query = new MongoDB\Driver\Query(array('id'=>'201513744'));
     $cursor = $manager->executeQuery('globaldb.posts', $query);
     foreach ($cursor as $document) {
-        echo "{ Name: $document->Name , id: . $document->id }";
+        echo "{ Name: $document->Name , id: $document->id }";
     }
 });
 
